@@ -1,0 +1,17 @@
+<div id="container" class = "m-3">
+  <h1><%= @task.title %></h1>
+  <%= link_to "Edit task", "/tasks/#{@task.id}/edit" %>
+  <div>
+    <p class = "bg-secondary-subtle p-3 border border-light" ><%= @task.details %></p>
+  </div>
+  <div class = "border-bottom">
+    <% if @task.completed %>
+      <input type="checkbox" id="<%= @task.title%>" name="<%= @task.title%>" checked />
+      <label for="<%= @task.title%>" class = "mb-3">This task is completed</label>
+    <% else %>
+      <input type="checkbox" id="<%= @task.title%>" name="<%= @task.title%>" />
+      <label for="<%= @task.title%>" class = "mb-3">This task is not completed yet</label>
+    <% end %>
+  </div>
+  <div class = "mt-3"><%= link_to "Back to list", tasks_path  %></div>
+</div>
